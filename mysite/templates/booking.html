@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+ {% block title %}
+  Booking
+{% endblock %}
+{% load static %}
+
+{% block content %}
+<body>
+<div class="img">
+    <img src="{% static '/image/backabout.jpg'%}" width="100%px"; height="800px">
+    <div class="headtag">
+        <h1 class="text-right">BOOKING APPOINMENT</h1>
+        <div class="container">
+            <form action="" method="post" >
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="Book Here" onclick="alertsuccess()" class="btn btn-dark mb-6">
+                <script>
+                    function alertsuccess(){
+                    alert("submitted successfully")
+                    };
+                </script>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+{% endblock %}

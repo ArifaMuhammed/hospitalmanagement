@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{%block title %} Contact Page {% endblock %}
+{% load static %}
+{% block content %}
+<div class="img">
+    <img src="{% static '/image/backabout.jpg'%}" width="100%px"; height="1500px">
+    <div class="text" >
+        <h1 class="texthead">GET IN TOUCH WITH US </h1>
+        <div style="width:600px;height:400px%; margin-left:100px; margin-top:50px; background:rgb(0,0,0,0.2);">
+            <form action="" method="POST" class="form" >
+                {%csrf_token%}
+                {{form.as_p}}
+                <input type="submit" value="Submit" onclick="alertsuccess()" class="btn btn-dark mb-6">
+                <script>
+                  function alertsuccess(){
+                  alert("submitted successfully")
+                   };
+                </script>
+            </form>
+            <div class="rightimg">
+                 <img src="{% static '/image/contactimage.jpg'%}" width="600px"; height="400px">
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
